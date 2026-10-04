@@ -127,10 +127,10 @@ FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed
 # 2026-09-29: mandi=देसी चना/तेज़ (desi chana +Rs300 rally, dense chana flat-lay), fmcg=3 पर 1/फ्री (Gillette Presto 3+1 scheme, real razor packs), news=MSME दर्जा/मुफ्त (Kirana MSME status + free Udyam registration, certificate flat-lay). Wide word on the upper (wider) line; verify radial clearance after render.
 # 2026-10-01: mandi=अरहर/तेज़ (arhar/toor 3rd-day rally Rs9,150/qtl, dense toor-dal flat-lay), fmcg=घड़ी/1kg फ्री (Ghadi 500g bori -> 1kg free, real Ghadi pack photo), news=12.6% कम/बारिश (monsoon departed 12.6% below normal, cracked-earth flat-lay). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
 # 2026-10-02: mandi=मोठ/तेज़ (moth +Rs200 rally, dense moth-bean flat-lay), fmcg=₹70 ब्रश/फ्री (Sensodyne paste MRP185 + Rs70 brush free, REAL D2R pack photo with the FREE Rs70 label in the top zone), news=गैस ₹62/महंगी (commercial 19kg LPG +Rs62.50, red cylinder). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
-# 2026-10-03: mandi=काबुली/तेज़ (kabuli chana +Rs300 rally, dense chickpea flat-lay), fmcg=2 पाउच/फ्री (Surf Excel 1kg -> 2 free pouches, REAL D2R pack photo with the offer label), news=UPI पर/चार्ज नहीं (15 Oct UPI MDR rule - small shops zero charge, phone-QR-on-cash). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["काबुली","तेज़"],fs=156),
-     dict(i=2,src="subjfull_2.png",lines=["2 पाउच","फ्री"],fs=152),
-     dict(i=3,src="subjfull_3.png",lines=["UPI पर","चार्ज नहीं"],fs=138)]
+# 2026-10-04: mandi=मसूर/तेज़ (masoor +Rs50 -> 6,900/qtl rally, dense red-lentil flat-lay), fmcg=150ml/ज्यादा (Mountain Dew Rs20 bottle now +150ml extra, real MD bottle photo), news=जेल नहीं/जुर्माना (Jan Vishwas 2026 - small FSSAI lapses no jail from 1 Oct, documents+scale). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["मसूर","तेज़"],fs=160),
+     dict(i=2,src="subjfull_2.png",lines=["150ml","ज्यादा"],fs=150),
+     dict(i=3,src="subjfull_3.png",lines=["जेल नहीं","जुर्माना"],fs=140)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
