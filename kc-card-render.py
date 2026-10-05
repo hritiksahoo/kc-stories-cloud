@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-04 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-05 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 mandi/GREEN (makki in-house Samachar, lal mirch in-house masala) + 1 teji/RED (masoor in-house daal). Direction balance 2G+1R. 3 DISTINCT in-house posts -> 3 distinct news_ids. kabuli/jau/arhar/sarson/binola skipped (same commodity+dir within 3d or recurring). rujhan digest skipped. MP teji_mandi rows are survey-form outlook (no concrete Rs card) -> not used.
- dict(i=1, label="मंडी भाव", stripe=GREEN, headline="मक्की",
-   price=f'{tri("down",GREEN)}₹2,700<span class="unit">/क्विंटल</span>',
-   sub=f'मक्की −₹100 → बिहार-पंजाब पहुंच ₹2,700/क्विंटल (खगड़िया हल्का ₹2,670); एथेनॉल कंपनियों को सरकारी चावल मिलने से खपत घटी · <b class="delta" style="color:{GREEN}">₹100 गिरी</b>',
-   l1="क्यों", v1="एथेनॉल कंपनियों को सरकारी चावल मिलने से मक्की की खपत घटी और इस बार बिजाई भी ज्यादा हुई",
-   l2="क्या करें", v2="अभी ज्यादा स्टॉक न भरें; महीने में ₹75–100 और गिरावट के आसार, घटने पर ही खरीदें"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="मसूर",
-   price=f'{tri("up",RED)}₹6,900<span class="unit">/क्विंटल</span>',
-   sub=f'मसूर +₹50 → ₹6,900/क्विंटल; लॉरेंस रोड ₹7,000–7,500, मलका ₹6,300–6,325; मिलों की खरीद तेज, कनाडा का माल भी महंगा · <b class="delta" style="color:{RED}">₹50 तेजी</b>',
-   l1="क्यों", v1="दाल मिलों की ग्राहकी लगातार निकल रही और कनाडा की मसूर ₹6,125 तक महंगी, सस्ते आयात का भरोसा टूटा",
-   l2="क्या करें", v2="घटने का इंतजार न करें, त्योहारी बिक्री भर का माल अभी उठाएं; नीचे भाव पर मिल खरीद तुरंत निकलती है"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="लाल मिर्च",
-   price=f'{tri("down",GREEN)}₹28,000<span class="unit">/क्विंटल</span>',
-   sub=f'लाल मिर्च 334 नंबर दिल्ली ₹28,000 पर ठंडी; ₹3,800 के उछाल के बाद ऊंचे भाव पर ग्राहकी घटी, गुंटूर आवक 40–45 हजार बोरी · <b class="delta" style="color:{GREEN}">भाव घटने के आसार</b>',
-   l1="क्यों", v1="गुंटूर में भारी आवक और कोल्ड स्टोर का पुराना स्टॉक निकलने से खरीदार मोलभाव की स्थिति में",
-   l2="क्या करें", v2="लाल मिर्च की खरीद थोड़ा रुककर करें, एक-दो दिन में भाव और नरम; एक बार में ज्यादा माल न भरें"),
- # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d incl also_shown) + body-verify (all concrete Rs). Category spread: beverage / soap / glucose.
- #   mountain-dew LR8.24 Consumer (Rs20 bottle now +150ml, box 40 bottle Rs720 @Rs18, Rs80/box margin), lifebuoy LR7.03 product-change (100g->125g + 4x125g par 1 free), dabur-glucose-d LR6.38 Consumer (Rs40 125g pack par Rs10 gel free, buy 28 sell margin 12).
- #   DROPPED: dettol/param-ghee/sensodyne/surf-excel/snakker/exo/dabur-amla = brand within 7d (ledger). haldiram all-in-one LR6.97 = fmcg_product_change bucket but body is margin-only (no actual badlav) -> segment/body mismatch, swapped.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="माउंटेन ड्यू",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹20 में 150ml ज्यादा</span>',
-   sub='माउंटेन ड्यू ₹20 बोतल में अब पहले से 150ml ज्यादा पेय; होलसेल बॉक्स 40 बोतल ₹720 (हर बोतल ₹18), दुकानदार को ₹80/बॉक्स मुनाफ़ा · <b class="delta">₹80/बॉक्स मुनाफ़ा</b>',
-   l1="ऑफर", v1="वही ₹20 दाम, हर बोतल में 150ml ज्यादा पेय — ग्राहक को सीधा फायदा",
-   l2="ग्राहक को", v2="40 बोतल का बॉक्स ₹720, हर बोतल ₹18 खरीद; दुकानदार को ₹80/बॉक्स मुनाफ़ा"),
- dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="लाइफबॉय",
-   price='<span class="wt">100g</span><span class="arrow">→</span><span class="wt">125g</span>',
-   sub='लाइफबॉय टोटल 100g अब 125g में — दाम वही, हर साबुन 25g ज्यादा; साथ ही 4 × 125g खरीदने पर एक 125g साबुन बिल्कुल फ्री · <b class="delta">25g ज्यादा + 4 पर 1 फ्री</b>',
-   l1="बदलाव", v1="100g पैक अब 125g का; प्रति साबुन 25g ज्यादा, एमआरपी में बदलाव नहीं",
-   l2="फायदा", v2="4 × 125g पर एक 125g साबुन मुफ्त — ग्राहक और दुकानदार दोनों को ज्यादा माल"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="ग्लूकोज-डी",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹40 पर ₹10 का जेल फ्री</span>',
-   sub='डाबर ग्लूकोज-डी ₹40 (125g) के 1 पैक पर डाबर बेफ्रेश जेल ₹10 वाला फ्री; होलसेल खरीद ₹28, रिटेल बिक्री पर ₹12 मुनाफ़ा · <b class="delta">₹12 मुनाफ़ा</b>',
-   l1="ऑफर", v1="₹40 वाले ग्लूकोज-डी पैक के साथ ₹10 का डाबर बेफ्रेश जेल बिल्कुल फ्री",
-   l2="ग्राहक को", v2="₹10 का माल मुफ्त; दुकानदार की खरीद ₹28, बिक्री पर ₹12 मुनाफ़ा"),
- # News (trending_news) - in-house 4oct Pan India Trending 1: Jan Vishwas 2026, from 1 Oct small/paper FSSAI lapses -> no jail, only fine (but fine up to Rs10 lakh). Non-bait, concrete, universal food-shop relevance. News=1 base. (TN2 'FMCG price hold' skipped = near-repeat of fmcg-price-hold 26sep; PMFME scheme kept as backup; nakli-ghee bait never considered.)
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="जन विश्वास कानून",
-   price='<span class="news">छोटी गलती पर अब जेल नहीं</span>',
-   sub='1 अक्टूबर 2026 से खाद्य सुरक्षा कानून में बदलाव — कागजी व छोटी-तकनीकी गलती पर जेल खत्म, सिर्फ जुर्माना; पर जुर्माना ₹10 लाख तक बढ़ा · <b class="delta">जेल खत्म</b>',
-   l1="क्यों ज़रूरी", v1="बिना लाइसेंस या गलत जानकारी जैसी तकनीकी चूक पर अब जेल नहीं, सिर्फ जुर्माना",
-   l2="क्या करें", v2="मिलावट-खराब माल पर सख्ती कायम; लाइसेंस व रिकॉर्ड पूरा रखें ताकि भारी जुर्माने से बचें"),
+ # Commodity (mandi_bhav) - 2 teji/RED (jeera in-house masala, shakkar in-house daal/shakkar) + 1 mandi/GREEN (basmati chawal in-house Samachar lead). Direction balance 2R+1G. 3 DISTINCT in-house posts (jeera 2f978cdf, shakkar 7523afcb, basmati e48d45a5). Category spread: spice / sweetener / grain. sona-chandi skipped; rujhan digest (1701) skipped; oil (soya/sarson/binola) over-covered -> skipped. MP teji_mandi rows are survey-form outlook (no concrete Rs card) -> not used.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="जीरा",
+   price=f'{tri("up",RED)}₹24,200<span class="unit">/क्विंटल</span>',
+   sub=f'जीरा +₹600 → बढ़िया माल ₹24,200/क्विंटल (ऊंझा); थोक सामान्य ₹23,900–24,200, नया माल ₹26,100–27,300; रबी बुवाई नज़दीक, माल रुका · <b class="delta" style="color:{RED}">₹600 तेजी</b>',
+   l1="क्यों", v1="रबी सीजन की बुवाई का समय पास और मौसम अनिश्चित; ऊंझा में किसान-व्यापारी माल रोक रहे, प्रोसेसर-स्टॉकिस्ट की खरीद तेज",
+   l2="क्या करें", v2="2–3 महीने की जरूरत का जीरा अभी के भाव पर उठा लें; नया माल आने में वक्त, गिरावट की उम्मीद कम"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="शक्कर",
+   price=f'{tri("up",RED)}₹6,000–6,300<span class="unit">/क्विंटल</span>',
+   sub=f'शक्कर +₹200 → ₹6,000–6,300/क्विंटल; गुड़ भी ₹100–300 चढ़कर ₹6,000–6,100 (हापुड़ बाल्टी ₹2,100–2,150/40किलो); त्योहारी मिठाई मांग · <b class="delta" style="color:{RED}">₹200 तेजी</b>',
+   l1="क्यों", v1="बारिश से यूपी मंडियों में नए गुड़ की आवक कमजोर; नवरात्रि-दिवाली की मिठाई-खोया मांग से शक्कर-गुड़ में दम",
+   l2="क्या करें", v2="शक्कर और गुड़ का माल अभी उठा लें, त्योहार पास आते ही और महंगा होगा; चीनी में जल्दबाजी न करें (सरकारी सख्ती)"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="बासमती चावल",
+   price=f'{tri("down",GREEN)}₹8,100–8,300<span class="unit">/क्विंटल</span>',
+   sub=f'1509 बासमती सेला हफ्तेभर की तेजी के बाद मुनाफावसूली से ₹300–400 टूटा → मिल भाव ₹8,100–8,300/क्विंटल; ₹500 और गिरावट बताई जा रही · <b class="delta" style="color:{GREEN}">₹400 गिरी</b>',
+   l1="क्यों", v1="1509 धान ₹400 चढ़कर ₹4,000–4,350 हुआ और चावल भी उछला, फिर आखिरी दिन मुनाफावसूली से भाव लुढ़के",
+   l2="क्या करें", v2="चावल की बड़ी खरीद अभी रोककर रखें; ₹500 और गिरावट के आसार, नीचे भाव पर ही माल उठाएं"),
+ # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d incl also_shown) + body-verify (all concrete Rs). Category spread: oral-care / cooling-powder / confectionery.
+ #   close-up LR7.64 Retailer (MRP20 paste, 6+1 free, buy 107, saving 33), navratna LR7.40 Consumer (Rs10 jar par 10x Rs1 pouch free = Rs10 free), corazon LR6.21 Retailer (600-unit candy jar Rs480 + free steel bottle, ~Rs120 benefit).
+ #   DROPPED: lifebuoy/mountain-dew/my-fruit-jelly/param-ghee/dettol/sensodyne/dabur-glucose-d = brand within 7d (ledger). parle eclairs LR6.82 = fmcg_product_change bucket but body is a free-toffee/margin SCHEME (jar pe 11 toffee free), no price/weight arrow -> segment/body mismatch, swapped. himalaya LR6.24 = valid backup, edged out by corazon for category spread (vs 2 personal-care already).
+ dict(i=4, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="क्लोज़अप",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">6+1 फ्री · ₹33 बचत</span>',
+   sub='क्लोज़अप ₹20 MRP वाला पेस्ट — 6+1 फ्री (कुल 7 नग) की होलसेल खरीद ₹107; यानी ₹140 के माल पर सीधी ₹33 की बचत · <b class="delta">₹33 बचत</b>',
+   l1="स्कीम", v1="₹20 MRP के 6 पेस्ट खरीदने पर 1 पेस्ट फ्री; पूरा लॉट (7 नग) ₹107 में पड़ता है",
+   l2="फायदा", v2="₹140 MRP का माल ₹107 में — दुकानदार को सीधी ₹33 बचत, हर नग पर मार्जिन बढ़ा"),
+ dict(i=5, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="नवरत्न पाउडर",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">₹10 जार पर ₹10 के पाउच फ्री</span>',
+   sub='नवरत्न ₹10 बिक्री वाला पाउडर — अब एक जार लेने पर ₹1 वाले 10 पाउच बिल्कुल फ्री, यानी ₹10 का अतिरिक्त माल मुफ्त · <b class="delta">₹10 फ्री</b>',
+   l1="ऑफर", v1="₹10 वाले नवरत्न पाउडर का जार लेने पर ₹1 वाले 10 पाउच बिल्कुल मुफ्त",
+   l2="ग्राहक को", v2="₹10 का माल बिल्कुल फ्री — ज्यादा वैल्यू से बिक्री भी तेज होती है"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="कोराज़ोन कैंडी",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">जार पर स्टील बोतल फ्री</span>',
+   sub='कोराज़ोन लव कैंडी का बड़ा जार (600 नग) ₹480 में, साथ में अच्छी स्टील पानी बोतल बिल्कुल फ्री; दुकानदार को करीब ₹120 का फायदा · <b class="delta">₹120 फायदा</b>',
+   l1="स्कीम", v1="600 नग कैंडी वाला बड़ा जार ₹480 में, साथ में अच्छी स्टील पानी बोतल मुफ्त",
+   l2="फायदा", v2="कैंडी की बिक्री पर ~₹120 मुनाफा और ऊपर से फ्री बोतल — दोहरा फायदा"),
+ # News (trending_news) - in-house 5oct Pan India Trending 1 (d101a5d5): Navratri festive stocking advisory. Non-bait, concrete festival calendar + 7-10 day supply lead time, universal kirana relevance. News=1 base. (TN2 nakli-note gang = scam/fraud bait -> skipped per SKIP-ALWAYS; Stand Up India scheme 17b26f21 kept as backup but scheme-heavy recent run favoured the fresh festive angle.)
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="नवरात्रि की तैयारी",
+   price='<span class="news">अभी ऑर्डर दें, वरना पछताएंगे</span>',
+   sub='नवरात्रि 11 अक्टूबर से, दशहरा 20 अक्टूबर, धनतेरस 6 नवंबर, दिवाली 8 नवंबर; थोक से माल आने में 7–10 दिन लगते हैं, इसलिए व्रत-पूजा स्टॉक अभी भरें · <b class="delta">सिर्फ 6 दिन बाकी</b>',
+   l1="क्यों ज़रूरी", v1="साल की सबसे बड़ी बिक्री सिर पर; त्योहार शुरू होने के बाद ऑर्डर देने पर माल समय पर नहीं आता",
+   l2="क्या करें", v2="कुट्टू-सिंघाड़ा आटा, सेंधा नमक, साबूदाना, मखाना, मेवा, देसी घी व पूजा सामान अभी ऑर्डर कर दें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}

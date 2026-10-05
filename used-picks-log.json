@@ -6734,6 +6734,74 @@
      "label": "सरकारी योजना PMFME 35% सब्सिडी ₹10 लाख तक — BACKUP: niche (food-processing unit); picked Jan Vishwas instead"
     }
    ]
+  },
+  {
+   "date": "2026-10-05",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "2f978cdf-e0c2-48b9-b0b0-797200cc75f7",
+      "label": "जीरा तेजी +₹600 → बढ़िया माल ₹24,200/क्विंटल (ऊंझा); रबी बुवाई नज़दीक, माल रुका, स्टॉकिस्ट खरीद तेज (in-house masala 5oct RED, slide1)",
+      "brand": "jeera"
+     },
+     {
+      "news_id": "7523afcb-8e3b-42f9-bf6d-06b9061758e2",
+      "label": "शक्कर तेजी +₹200 → ₹6,000–6,300/क्विंटल; गुड़ भी ₹100–300 चढ़कर ₹6,000–6,100 (हापुड़ बाल्टी ₹2,100–2,150/40kg), त्योहारी मांग (in-house daal/shakkar 5oct RED, slide2)",
+      "brand": "shakkar"
+     },
+     {
+      "news_id": "e48d45a5-5733-43e0-891d-bfcf3bbd10b5",
+      "label": "बासमती चावल मंदी −₹400 → 1509 सेला मिल ₹8,100–8,300/क्विंटल; हफ्तेभर की तेजी के बाद मुनाफावसूली, ₹500 और गिरावट बताई (in-house Samachar 5oct GREEN, slide3)",
+      "brand": "basmati-chawal"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "b6bc774c-fe8b-465f-8f5c-f526043c8362",
+      "label": "क्लोज़अप ₹20 MRP पेस्ट — 6+1 फ्री (7 नग) खरीद ₹107, ₹33 बचत — Retailer Scheme (MP LR7.64, body-verified)",
+      "brand": "close-up"
+     },
+     {
+      "news_id": "a4d829a1-b656-451d-b3ce-3aa14af74e1b",
+      "label": "नवरत्न ₹10 पाउडर — एक जार पर ₹1 वाले 10 पाउच फ्री (₹10 का माल मुफ्त) — Consumer Scheme (MP LR7.40, body-verified)",
+      "brand": "navratna"
+     },
+     {
+      "news_id": "1ce41ca3-0830-4aa1-aee8-d95fc6bf6c6f",
+      "label": "कोराज़ोन लव कैंडी बड़ा जार (600 नग) ₹480 + स्टील पानी बोतल फ्री, ~₹120 फायदा — Retailer Scheme (MP LR6.21, body-verified)",
+      "brand": "corazon"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "d101a5d5-6642-43e8-a1d7-4df1306abbdd",
+      "label": "नवरात्रि 11 अक्टूबर से (दशहरा 20, धनतेरस 6 नवंबर, दिवाली 8 नवंबर); थोक लीड 7–10 दिन, व्रत-पूजा स्टॉक अभी भरें (in-house TN1 5oct, non-bait festive)",
+      "brand": "navratri"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "5634d531-733e-43ed-9999-92bd9e44e226",
+     "label": "Parle 2-in-1 Eclairs जार पर 11 टॉफी फ्री — MP LR6.82, bucketed fmcg_product_change पर body एक स्कीम/मार्जिन है (segment/body mismatch), swapped out",
+     "brand": "parle"
+    },
+    {
+     "news_id": "1ce316e7-0be5-42aa-9693-74a0eb8a651b",
+     "label": "Himalaya face wash जार 12+1 फ्री, MRP₹20 15ml — MP LR6.24 valid Retailer Scheme backup, corazon को category spread के लिए चुना (2 personal-care पहले से)",
+     "brand": "himalaya"
+    },
+    {
+     "news_id": "17b26f21-3b98-4863-88ee-b24a4157ffbb",
+     "label": "Stand Up India ₹10 लाख–₹1 करोड़ लोन (in-house scheme 5oct) — news backup, scheme-heavy recent run के चलते fresh festive TN1 चुना",
+     "brand": "stand-up-india"
+    },
+    {
+     "news_id": "a0b7bde6-af37-429b-913d-b14b14b24136",
+     "label": "मानसून 12.6% कम बारिश (MP news LR4.61) — already published 1oct, not reconsidered",
+     "brand": "monsoon"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
