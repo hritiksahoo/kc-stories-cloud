@@ -129,9 +129,10 @@ FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed
 # 2026-10-02: mandi=मोठ/तेज़ (moth +Rs200 rally, dense moth-bean flat-lay), fmcg=₹70 ब्रश/फ्री (Sensodyne paste MRP185 + Rs70 brush free, REAL D2R pack photo with the FREE Rs70 label in the top zone), news=गैस ₹62/महंगी (commercial 19kg LPG +Rs62.50, red cylinder). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
 # 2026-10-04: mandi=मसूर/तेज़ (masoor +Rs50 -> 6,900/qtl rally, dense red-lentil flat-lay), fmcg=150ml/ज्यादा (Mountain Dew Rs20 bottle now +150ml extra, real MD bottle photo), news=जेल नहीं/जुर्माना (Jan Vishwas 2026 - small FSSAI lapses no jail from 1 Oct, documents+scale). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
 # 2026-10-05: mandi=जीरा/तेज़ (jeera +Rs600 -> 24,200/qtl rally, dense cumin flat-lay), fmcg=6+1/फ्री (Closeup Rs20 paste 6+1 free scheme, REAL D2R pack photo with wordmark+Rs20 in top zone), news=नवरात्रि/तैयारी (Navratri festive stocking advisory, dense marigold+diya+vrat flat-lay). Short 2-line hooks, wider word on the UPPER line; verify radial clearance <=~448 after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["जीरा","तेज़"],fs=160),
-     dict(i=2,src="subjfull_2.png",lines=["6+1","फ्री"],fs=166),
-     dict(i=3,src="subjfull_3.png",lines=["नवरात्रि","तैयारी"],fs=132)]
+# 2026-10-06: mandi=उड़द/तेज़ (urad +Rs125 rally, dense black-gram flat-lay), fmcg=ब्रश/फ्री (Colgate 300g + Rs35 toothbrush free scheme, real Colgate pack+brush photo), news=RBI/फैसला (RBI MPC repo decision tomorrow 7 Oct, rupee-notes flat-lay). Short 2-line hooks, wider word on the UPPER line; verify radial clearance <=~448 after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["उड़द","तेज़"],fs=166),
+     dict(i=2,src="subjfull_2.png",lines=["ब्रश","फ्री"],fs=166),
+     dict(i=3,src="subjfull_3.png",lines=["RBI","फैसला"],fs=150)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
