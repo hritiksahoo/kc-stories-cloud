@@ -6802,6 +6802,53 @@
      "brand": "monsoon"
     }
    ]
+  },
+  {
+   "date": "2026-10-06",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "21edc88e-206c-484b-92b2-c56969c98d88",
+      "label": "उड़द तेजी +₹125 → दिल्ली ₹9,725–9,750/क्विंटल; बर्मा आयात महंगा, भाव-भविष्य ₹10,450 तक (in-house daal 6oct RED, slide1)",
+      "brand": "urad"
+     },
+     {
+      "news_id": "f89047e0-d57f-4f60-9352-35c847f879a0",
+      "label": "बादामगिरी तेजी +₹30–40 → कैलिफोर्निया ₹1,000–1,070/किलो; आयात घटा, रुपया कमजोर (in-house mewa 6oct RED, slide2)",
+      "brand": "badamgiri"
+     },
+     {
+      "news_id": "05f95a92-2f2b-462d-a902-713b97189c3d",
+      "label": "बिनौला तेल मंदी −₹300 → ₹14,550/क्विंटल; पाम भी −₹50 → ₹12,100, सोया सुस्त (in-house oil 6oct GREEN, slide3)",
+      "brand": "binola-tel"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "dbeb3555-c77d-4ac3-9e16-ab24d5ea79e4",
+      "label": "टाइड ₹10 डिटर्जेंट केक — वजन 80g→140g (60g एक्स्ट्रा) — fmcg_product_change (MP LR7.03, body-verified)",
+      "brand": "tide"
+     },
+     {
+      "news_id": "0a3e6ba4-1752-4dc3-a475-b720e543a802",
+      "label": "कैडबरी ₹10 चॉकलेट केक नया लॉन्च — 15 पीस बॉक्स WS₹130/MRP₹150, ₹20 मुनाफा — new_product_launch (MP LR6.97, body-verified)",
+      "brand": "cadbury"
+     },
+     {
+      "news_id": "875f7627-1f85-4a36-9427-0dc648d37ba6",
+      "label": "कोलगेट डेंटल क्रीम 200+100=300g + ₹35 ब्रश फ्री — MRP208 WS187 ₹21 मार्जिन — Consumer Scheme (MP LR6.73, body-verified)",
+      "brand": "colgate"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "241baab7-4fe5-4ce9-89d8-9a9bc695219c",
+      "label": "RBI का फैसला कल 7 अक्टूबर — रेपो 5.25%, 0.25% बढ़कर 5.50% या स्थिर; दुकान कर्ज पर असर (in-house TN1 6oct)",
+      "brand": "rbi-repo"
+     }
+    ]
+   },
+   "also_shown": []
   }
  ],
  "brand_dedup_window_days": 7
