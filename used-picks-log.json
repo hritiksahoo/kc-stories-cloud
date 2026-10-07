@@ -6849,6 +6849,108 @@
     ]
    },
    "also_shown": []
+  },
+  {
+   "date": "2026-10-07",
+   "picks": {
+    "mandi_bhav": [
+     {
+      "news_id": "785c21ae-dbec-4675-836a-1ed6e1f27792",
+      "brand": "rajma-chitra",
+      "direction": "teji",
+      "label": "राजमां चित्रा तेजी ₹120–122/किलो (थोक ₹12,000/क्विंटल); बीड-बारसी से आवक घटी, आयात महंगा (in-house दाल 7oct RED, slide1)"
+     },
+     {
+      "news_id": "f1c94a80-a771-4186-a19b-39351a4a4546",
+      "brand": "makhana",
+      "direction": "mandi",
+      "label": "मखाना मंदी −₹60–70 → ₹700–1,200/किलो; बंपर उत्पादन, भाव पिछले साल से ~50% नीचे (in-house Samachar 7oct GREEN, slide2)"
+     },
+     {
+      "news_id": "54a404cb-7e4a-4c49-93c3-057166a156d6",
+      "brand": "sarson",
+      "direction": "teji",
+      "label": "सरसों तेजी +₹25–50 → ₹8,600–8,625/क्विंटल लगातार तीसरे दिन (जयपुर ₹8,800); आवक घटी, मिल मांग; सरसों तेल ₹17,100 (in-house तेल 7oct RED, slide3; framed as sarson to avoid soya over-cover)"
+     }
+    ],
+    "fmcg": [
+     {
+      "news_id": "802625f8-1202-4345-aa49-63bff327493f",
+      "brand": "coca-cola",
+      "segment": "Consumer Scheme",
+      "lr": 6.5,
+      "label": "कोका-कोला ₹99 2L पैक + ₹20 वाली 250ml स्प्राइट फ्री, पेटी(9) पर ₹160 बचत — Consumer Scheme (MP LR6.50, body-verified; offer confirmed by D2R on-pack photo)"
+     },
+     {
+      "news_id": "809dc464-7b5b-42ab-b3dc-ae89419b2d83",
+      "brand": "dermi-cool",
+      "segment": "Consumer Scheme",
+      "lr": 6.36,
+      "label": "डर्मी कूल ₹155 पैक + ₹75 वाला पाउडर फ्री — Consumer Scheme (MP LR6.36, body-verified)"
+     },
+     {
+      "news_id": "6dafb3ef-1c29-4fb4-87a5-ab20b8943df4",
+      "brand": "doms",
+      "segment": "Retailer Scheme",
+      "lr": 5.96,
+      "label": "डोम्स ज़ूम पेंसिल बॉक्स (10 डिब्बी); हर पेंसिल ₹5, ₹60/बॉक्स मार्जिन + हर डिब्बी शार्पनर/इरेज़र फ्री — Retailer Scheme (MP LR5.96, body-verified)"
+     }
+    ],
+    "trending_news": [
+     {
+      "news_id": "f07ff50a-e7b2-4640-8e5a-cea4e64fc2a2",
+      "brand": "dhaan-kharid",
+      "label": "धान सरकारी खरीद शुरू पंजाब-हरियाणा-UP; MSP +₹72 → ₹2,441/क्विंटल, किसान के खाते में सीधा पैसा, त्योहारी मांग (in-house Trending-1 7oct, non-bait market-impact)"
+     }
+    ]
+   },
+   "also_shown": [
+    {
+     "news_id": "d5299e48-3155-4c5c-bd00-71300444e6e4",
+     "brand": "ghadi",
+     "label": "Ghadi surf 500g MRP41 + 1kg free — Retailer LR7.98 — DROPPED: brand within 7d"
+    },
+    {
+     "news_id": "dbeb3555-c77d-4ac3-9e16-ab24d5ea79e4",
+     "brand": "unclear",
+     "label": "fmcg_product_change LR7.95 — DROPPED: news_id used within 12d"
+    },
+    {
+     "news_id": "77c7b80f-c33c-46e4-b36b-fff4abdc7c80",
+     "brand": "patanjali-dant-kanti",
+     "label": "Patanjali Dant Kanti 200g ₹106 + ₹20 brush free — Consumer LR6.29 — DROPPED: brand within 7d"
+    },
+    {
+     "news_id": "d49937da-4306-4f27-8643-5710a13fff93",
+     "brand": "solar-surf",
+     "label": "Solar/Sunlight surf 3kg coupon → 2 soap ₹10 — Consumer LR6.06 — DROPPED: vague coupon mechanic, no clean figure"
+    },
+    {
+     "news_id": "88618734-7753-4150-bfd0-af6c5ab81ba8",
+     "brand": "godrej-hair-colour",
+     "label": "Godrej black powder hair colour ₹20 — fmcg_product_change LR5.91 — DROPPED: packing change only, no price/weight delta"
+    },
+    {
+     "news_id": "67b82046-74d6-450a-8711-a484376ed61a",
+     "brand": "unbranded-blade",
+     "label": "₹200 blade patta, 20 dabbi, ₹80 margin — Retailer LR5.79 — DROPPED: no brand named"
+    },
+    {
+     "news_id": "c8ad8c35-77f5-415c-980c-cf6c9ce047f4",
+     "brand": "sensodyne",
+     "label": "Sensodyne MRP185 + ₹70 brush free — Consumer LR5.60 — DROPPED: brand within 7d"
+    },
+    {
+     "news_id": "5d0e2a66-01fc-4dea-9eb3-638549c54e9c",
+     "brand": "surf-excel",
+     "label": "Surf Excel 1kg ₹1540/12 pouch, 1+2 free consumer — Consumer LR5.15 — DROPPED: brand within 7d"
+    },
+    {
+     "news_id": "f718c7a9-9d5e-46ca-8c22-4adb03273c9a",
+     "brand": "dettol",
+     "label": "Dettol handwash ₹99 + ₹68 free — Consumer LR4.70 — DROPPED: brand within 7d"
+    }
+   ]
   }
  ],
  "brand_dedup_window_days": 7
