@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-09 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-10 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 teji/RED (arhar in-house daal, pista in-house mewa) + 1 mandi/GREEN (chini MP teji_mandi UGC, bearish new-crop outlook). Direction 2R+1G. 3 DISTINCT news_ids (arhar dccd5f51 in-house, pista b7843f2d in-house, chini 2cad5af1 MP LR6.19). Category spread: pulse / dry-fruit / sugar. sona-chandi skipped; rujhan digest (b9ee412a) + samachar digest (4aa7a15d) skipped. SWAPPED OUT sarson tel (a9c8eff6, in-house teji) -> chini: avoided all-RED commodity + soft 3-day sarson repeat (sarson teji used 10-07). Figures locked from in-house + body-verified UGC bodies.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="अरहर दाल",
-   price=f'{tri("up",RED)}₹9,750–9,800<span class="unit">/क्विंटल</span>',
-   sub=f'दिल्ली लेमन अरहर ₹100 चढ़कर ₹9,750–9,800; अरहर दाल ₹13,000–13,800/क्विंटल; महा-कर्नाटक सूखे से फसल 18–20% घटने का डर · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="कम बारिश से महाराष्ट्र-कर्नाटक में अरहर फसल बिगड़ी; अफ्रीका में भी उत्पादन घटा, आयात से राहत कम",
-   l2="क्या करें", v2="त्योहार-शादी सीज़न की जरूरत भर अरहर दाल अभी बांध लें; आगे ₹9,900 तक जाने के आसार"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="पिस्ता",
-   price=f'{tri("up",RED)}₹4,000–4,100<span class="unit">/किलो</span>',
-   sub=f'पेशावरी पिस्ता ₹100 उछलकर ₹4,000–4,100/किलो; ईरानी ₹2,950–3,100, हरा ₹3,450–3,650; त्योहारी मिठाई-गिफ्ट मांग तेज · <b class="delta" style="color:{RED}">₹100 तेजी</b>',
-   l1="क्यों", v1="मिठाई-बेकरी और गिफ्ट पैक कंपनियों की जोरदार मांग; पुराना स्टॉक निकला, नया माल सीमित",
-   l2="क्या करें", v2="दिवाली तक पिस्ता सस्ता मिलने की उम्मीद कम; मिठाई-गिफ्ट वाले ग्राहकों का माल अभी भर लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="चीनी",
-   price=f'{tri("down",GREEN)}₹49.50<span class="unit">/किलो थोक</span>',
-   sub=f'थोक चीनी ₹49.50/किलो; नई गन्ना फसल की पेराई से आगे भाव ₹48 की ओर नरम पड़ने के आसार, खुदरा ₹50 · <b class="delta" style="color:{GREEN}">नई फसल से मंदी</b>',
-   l1="क्यों", v1="नई गन्ना फसल आ गई; मंडी में आवक बढ़ने से आगे थोक चीनी के भाव नीचे आने की उम्मीद",
-   l2="क्या करें", v2="अभी जरूरत भर चीनी ही लें; बड़ा स्टॉक नई फसल की सस्ती चीनी आने तक रोकें"),
- # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (all concrete Rs). Category spread: snack product-change / snack launch / oral-care margin.
- #   aakash-namkeen LR6.55 fmcg_product_change (c3a4a57a: Aakash namkeen Rs5, weight 16g->20g, +4g, price same), real-bites LR5.38 new_product_launch (2a76219f: Real Bites Nadiyadi Mix Rs5 naya, MRP5 kharid3.70 margin1.30/26%), dabur-red LR4.67 scheme/retailer-margin (a4a2472a: Dabur Red gel 300g MRP246 WS buy Rs111, sell Rs200 -> Rs89 margin).
- #   DROPPED brand within 7d (ledger): dettol c2ada0d3 LR7.63, colgate 595033e7/0ac19c68, patanjali-dant-kanti a5aa7489/cf442ab3, godrej-no1 91ba4a7b, vivel 8518d8a5, maxo 1e5c40f0, solar-surf d49937da, amber 3a852200. SWAPPED (category spread, soft): hara-matar 2da6f1c2 LR4.76 -> also_shown (3rd Rs5 snack = same-category domination; dabur-red LR4.67 taken for oral-care spread + strongest margin number). dant-kranti 20ccb8e5 LR4.72 skipped: no concrete Rs figure (body-verify fail) + oral-care fatigue + near patanjali-dant-kanti used within 7d.
- dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="आकाश नमकीन",
-   price='<span class="wt">16g</span><span class="arrow">→</span><span class="wt">20g</span>',
-   sub='₹5 वाली आकाश नमकीन में अब 4 ग्राम ज्यादा — वजन 16g से बढ़कर 20g, दाम वही ₹5 · <b class="delta">4g ज्यादा, दाम वही</b>',
-   l1="बदलाव", v1="₹5 पैकेट का वजन 16 ग्राम से बढ़ाकर 20 ग्राम; कीमत ₹5 ही रखी",
-   l2="फायदा", v2="उसी दाम में ज्यादा नमकीन — ग्राहक को अच्छी लगेगी, दुकान पर तेज बिकेगी"),
- dict(i=5, eyebrow="FMCG", label="नया प्रोडक्ट लॉन्च", stripe=LAUNCH_AMBER, headline="रियल बाइट्स",
-   price=f'<span class="newtag" style="background:{LAUNCH_AMBER}">नया</span><span class="mrp">MRP ₹5</span>',
-   sub=f'रियल नमकीन का नया "नाडियादी मिक्स" फ्लेवर ₹5 पैकेट; खरीद ₹3.70, बिक्री ₹5, मार्जिन ₹1.30/पैकेट (26%) · <b class="delta" style="color:{LAUNCH_AMBER}">₹1.30 मार्जिन</b>',
-   l1="नया क्या", v1="रियल बाइट्स का नया नाडियादी मिक्स फ्लेवर, ₹5 के छोटे पैकेट में लॉन्च",
-   l2="फायदा", v2="हर पैकेट ₹1.30 (26%) मार्जिन; चाय के साथ तेज बिक्री, रोज 15–20 पैकेट"),
- dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="डाबर रेड पेस्ट",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹89 तक मार्जिन</span>',
-   sub=f'डाबर रेड जेल टूथपेस्ट 300g (MRP ₹246) थोक खरीद ₹111; ₹200 में बेचें तो भी ₹89 मार्जिन · <b class="delta" style="color:{SCHEME_GREEN}">₹89/नग मार्जिन</b>',
-   l1="स्कीम", v1="300g डाबर रेड पेस्ट, MRP ₹246, थोक खरीद सिर्फ ₹111 प्रति नग",
-   l2="फायदा", v2="₹200 में बेचें तो ₹89 मार्जिन; ग्राहक को MRP से सस्ता, दुकानदार को मोटा फायदा"),
- # News (trending_news) - in-house 9oct Pan India Trending 1 (b54e69b2): GST Council 57th meeting (8 Oct) recommends scrapping Section 69 (arrest power), prosecution threshold Rs1cr->Rs5cr, refund window 15->10 days, no notice below Rs10k. Non-bait (relief, not arrest-bait), concrete, high trader/kirana relevance. News=1 base. (TN2 monsoon 3b35aa4d = advisory, weaker; Pan India Scheme postoffice f92d1be5 = scheme explainer -> not used.)
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="GST में राहत",
-   price='<span class="news">अब GST में गिरफ्तारी नहीं</span>',
-   sub='GST काउंसिल ने जांच में गिरफ्तारी वाली धारा 69 हटाने की सिफारिश की; मुकदमे की सीमा ₹1 करोड़ से ₹5 करोड़, रिफंड 15 से 10 दिन में · <b class="delta">कारोबारियों को राहत</b>',
-   l1="क्यों ज़रूरी", v1="छोटे दुकानदारों का गिरफ्तारी का डर घटेगा; ₹10,000 से कम के मामलों में नोटिस नहीं",
-   l2="क्या करें", v2="अभी ये काउंसिल की सिफारिशें हैं; GST रेट नहीं बदले, माल के दाम पर सीधा असर नहीं"),
+ # Commodity (mandi_bhav) - 2 teji/RED (moth in-house daal, kaju in-house mewa) + 1 mandi/GREEN (sarson tel in-house tel, profit-booking down). Direction 2R+1G. 3 DISTINCT in-house news_ids (moth a73d46b8, kaju 14ca6924, sarson-tel c1ab338f). Category spread: pulse / dry-fruit / oil. sona-chandi none; rujhan digest (8387912e) + samachar digest (be247948) skipped. chini NOT used (used 10-09 commodity + conflicting teji/mandi signals today). Figures locked from in-house editorial bodies.
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="मोठ",
+   price=f'{tri("up",RED)}₹9,000–9,200<span class="unit">/क्विंटल</span>',
+   sub=f'राजस्थान मंडियों में मोठ ₹9,000–9,200; थोक भाव ₹9,300–9,400/क्विंटल; नीचे ₹6,800 से यहां तक चढ़ी, आगे ~4% और तेजी के आसार · <b class="delta" style="color:{RED}">~4% और तेजी</b>',
+   l1="क्यों", v1="मोठ की फसल में भारी पोल, आवक का दबाव नहीं बना; बड़ी कंपनियां प्रतिस्पर्धी खरीद कर रही हैं",
+   l2="क्या करें", v2="मोठ का जरूरी स्टॉक अभी बांध लें; हर बढ़े भाव पर थोड़ा मुनाफा भी लेते रहें"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="काजू",
+   price=f'{tri("up",RED)}₹870–890<span class="unit">/किलो</span>',
+   sub=f'दिवाली-छठ से पहले काजू ₹870–890/किलो; बादामगिरी ₹20–30 तेज होकर ₹1,080–1,200; बड़ी इलायची ₹100 बढ़कर ₹1,540/किलो · <b class="delta" style="color:{RED}">त्योहारी थोक मांग</b>',
+   l1="क्यों", v1="मिठाई और गिफ्ट पैक कंपनियों की भारी थोक खरीद; पुराना स्टॉक घटा, रुपया कमजोर से आयात महंगा",
+   l2="क्या करें", v2="दिवाली गिफ्ट-मिठाई की बिक्री के लिए काजू-बादाम का स्टॉक अभी भर लें; आगे भाव और चढ़ सकते हैं"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="सरसों तेल",
+   price=f'{tri("down",GREEN)}₹17,350<span class="unit">/क्विंटल</span>',
+   sub=f'सरसों तेल ₹100 घटकर ₹17,350/क्विंटल; कोलकाता कच्ची घानी ₹1,780/10किलो, भरतपुर ₹15 नरम होकर ₹1,785; सरसों दाना जयपुर ₹50 टूटकर ₹8,900 · <b class="delta" style="color:{GREEN}">₹100 गिरावट</b>',
+   l1="क्यों", v1="ऊंचे भाव पर मुनाफा वसूली और तेल मिलों की सुस्त मांग; मंडियों में रोज ~2 लाख बोरी आवक",
+   l2="क्या करें", v2="सरसों तेल की बड़ी खरीद 2–3 दिन रोकें; तिल-बिनौला तेल में सप्लाई घटी, वो स्टॉक अभी भर लें"),
+ # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (all concrete Rs). ZERO oral-care (category saturated in 7d: colgate/close-up/dant-kranti/dabur-red/sensodyne). Category spread: soap / biscuit / ayurvedic-digestive.
+ #   lux LR5.76 scheme:Consumer (7869a1ec: Lux beauty soap MRP30, 4+1 free), parle LR5.75 scheme:Retailer (12c5e9ed: Parle Happy Happy Rs5 biscuit, 22 pcs buy -> 2 free to retailer = Rs10 extra), martand LR5.22 scheme:Retailer (87e0642d: Martand pachak churan Rs5 box + Rs10 Chandrakanta skincare free).
+ #   DROPPED brand within 7d (brands7): aakash-namkeen/colgate/vivel/dettol/exo/sensodyne/dabur-red/godrej-no1(news12). khasta-kachori 30647a3a LR5.75 skipped: NO brand (detected_brands empty) -> weak FMCG slide. ghadi/amir/bikaji = lower-LR backups.
+ dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="लक्स साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 + 1 फ्री</span>',
+   sub=f'₹30 MRP वाले लक्स ब्यूटी साबुन पर 4 खरीदने पर 1 साबुन बिल्कुल फ्री (4+1); ग्राहक को ₹30 की सीधी बचत · <b class="delta" style="color:{SCHEME_BLUE}">5वां साबुन फ्री</b>',
+   l1="ऑफर", v1="₹30 MRP लक्स ब्यूटी साबुन — 4 पीस के साथ 1 पीस बिल्कुल फ्री (4+1 स्कीम)",
+   l2="ग्राहक को", v2="हर 4 साबुन पर 1 मुफ्त; त्योहार में नहाने के साबुन की तेज बिक्री, ग्राहक को ₹30 बचत"),
+ dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पार्ले हैप्पी हैप्पी",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">22 पर 2 फ्री</span>',
+   sub=f'₹5 MRP वाले पार्ले हैप्पी हैप्पी चॉको-चिप बिस्किट के 22 पीस खरीदने पर 2 पीस दुकानदार को फ्री; ₹10 का एक्स्ट्रा फायदा · <b class="delta" style="color:{SCHEME_GREEN}">₹10 एक्स्ट्रा मार्जिन</b>',
+   l1="स्कीम", v1="₹5 पार्ले हैप्पी हैप्पी चॉको-चिप बिस्किट, 22 पीस खरीदने पर 2 पीस फ्री",
+   l2="फायदा", v2="हर 22 पीस पर ₹10 का एक्स्ट्रा मार्जिन; चॉको-चिप बिस्किट तेज बिकता है"),
+ dict(i=6, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="मार्तंड पाचक चूर्ण",
+   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹5 पर ₹10 फ्री</span>',
+   sub=f'₹5 वाले मार्तंड पाचक चूर्ण के डिब्बे के साथ ₹10 की मार्तंड चंद्रकांता स्किन केयर बिल्कुल फ्री · <b class="delta" style="color:{SCHEME_GREEN}">₹10 का सामान फ्री</b>',
+   l1="स्कीम", v1="₹5 मार्तंड पाचक चूर्ण के डिब्बे पर ₹10 की मार्तंड चंद्रकांता स्किन केयर फ्री",
+   l2="फायदा", v2="एक दाम में दो प्रोडक्ट बेचने को मिलते हैं; कॉम्बो तेज बिकता है, मार्जिन बढ़िया"),
+ # News (trending_news) - in-house 10oct Pan India Schemes (12322319): AIF (कृषि अवसंरचना निधि) - godown/sorting/cold-storage loan up to Rs2cr, 3% annual interest subvention for 7yr, + CGTMSE guarantee. Fresh, concrete, policy/scheme (explicitly preferred), non-bait, kirana-relevant (shopkeepers eligible as 'कृषि उद्यमी'). LPG (fe464cfe) skipped = repeat of Oct-2 hike; milawat raids (9299b8a4) = bait; monsoon 3b35aa4d (Oct9 MP) = weaker/stale.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="गोदाम कर्ज राहत",
+   price='<span class="news">₹2 करोड़ तक कर्ज, 3% ब्याज छूट</span>',
+   sub='केंद्र की कृषि अवसंरचना निधि (AIF): अनाज-दाल गोदाम, छंटाई या कोल्ड स्टोरेज के लिए ₹2 करोड़ तक कर्ज पर हर साल 3% ब्याज छूट, 7 साल तक; साथ में CGTMSE गारंटी · <b class="delta">किराना को सस्ता कर्ज</b>',
+   l1="क्यों ज़रूरी", v1="गोदाम/छंटाई यूनिट लगाने वाले दुकानदार 'कृषि उद्यमी' श्रेणी में पात्र; बड़ी जमानत का बोझ नहीं",
+   l2="क्या करें", v2="agriinfra.dac.gov.in पर ऑनलाइन आवेदन करें, प्रोजेक्ट रिपोर्ट लगाएं, फिर बैंक में कागज जमा करें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}

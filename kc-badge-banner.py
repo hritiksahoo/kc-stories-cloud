@@ -133,9 +133,10 @@ FS=130   # 2026-08-25: dropped 138->130, "तूर दाल" upper line grazed
 # 2026-10-07: mandi=मखाना/सस्ता (makhana crashed -Rs60-70, fox-nut photo, GREEN good-for-shopkeeper), fmcg=स्प्राइट/फ्री (Coca-Cola Rs99 2L pack + 250ml Sprite free, real Coke+Sprite bottles), news=धान खरीद/शुरू (paddy MSP procurement started Rs2,441/qtl, paddy-sack photo). Short 2-line hooks, wider element on the UPPER line; धान खरीद is wide -> fs lowered. Verify radial clearance <=~448 after render.
 # 2026-10-08: mandi=छुहारा/तेज (chhuhara +Rs1000 festival rally, dense dry-dates flat-lay), fmcg=साबुन 4 पर/1 फ्री (Vivel Aloe Vera BUY 4 GET 1 FREE / SAVE Rs25, REAL D2R pack photo with the offer label in the top zone), news=चीनी/महंगी (cane farmers protest -> sugar may rise, sugar+cane flat-lay). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
 # 2026-10-09: mandi=अरहर/तेज (arhar/toor rally Rs9,750-9,800/qtl, dense toor-dal flat-lay), fmcg=₹89/मार्जिन (Dabur Red 300g MRP246 WS buy Rs111 -> Rs89 margin, REAL Dabur Red pack photo in top zone), news=GST में/राहत (GST Council scraps Section 69 arrest power, rupee-notes+scale flat-lay). Short 2-line hooks, wider element on the UPPER line; verify radial clearance <=~448 after render.
-DAY=[dict(i=1,src="subjfull_1.png",lines=["अरहर","तेज"],fs=160),
-     dict(i=2,src="subjfull_2.png",lines=["₹89","मार्जिन"],fs=152),
-     dict(i=3,src="subjfull_3.png",lines=["GST में","राहत"],fs=150)]
+# 2026-10-10: mandi=काजू/तेज (kaju Diwali-Chhath festive rally Rs870-890/kg, dense cashew flat-lay), fmcg=साबुन 4 पर/1 फ्री (Lux beauty soap 4+1 free, REAL D2R pack photo with the "4+1 FREE" sticker in the top zone), news=कर्ज पर/3% छूट (AIF godown loan - 3% interest subvention up to Rs2cr, grain-warehouse+cash flat-lay). Short 2-line hooks, wider element on the UPPER line; "साबुन 4 पर" is wide -> fs lowered. Verify radial clearance <=~448 after render.
+DAY=[dict(i=1,src="subjfull_1.png",lines=["काजू","तेज"],fs=158),
+     dict(i=2,src="subjfull_2.png",lines=["साबुन 4 पर","1 फ्री"],fs=132),
+     dict(i=3,src="subjfull_3.png",lines=["कर्ज पर","3% छूट"],fs=150)]
 if __name__=="__main__":
     render("D", DAY, TALL, 190)   # bottom raised for FS130 + wide tn bottom line: seats block higher in the circle's wider zone to clear the ring
     # 2026-07-14 crop fix: operator flagged text CROPPING at the ring. Root cause — the
