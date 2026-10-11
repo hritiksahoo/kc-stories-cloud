@@ -7193,6 +7193,80 @@
           "label": "कमर्शियल LPG 19kg +₹62.50–71.50 (1 Oct hike) — DROPPED as news: substantive repeat of Oct-2 LPG story; AIF scheme taken (fresh). milawat raids 9299b8a4 = bait skipped; monsoon 3b35aa4d (Oct9 MP) = weaker"
         }
       ]
+    },
+    {
+      "date": "2026-10-11",
+      "picks": {
+        "mandi_bhav": [
+          {
+            "news_id": "332ac2e1-e958-40db-a75e-996e65bac89c",
+            "brand": "methi",
+            "direction": "teji",
+            "label": "मेथीदाना तेजी → ₹8,200–8,300/क्विंटल (+₹400); नीमच बिना छनी ₹77–78/किलो; उत्पादन ~3.45→2.45 लाख टन, आपूर्ति आधी (in-house मसाला 11oct RED, slide1)"
+          },
+          {
+            "news_id": "fbcba991-3315-4e36-9b7d-1a77779e40ac",
+            "brand": "chana-dal",
+            "direction": "teji",
+            "label": "चना दाल तेजी → ₹8,750–9,200/क्विंटल (+₹150); राजस्थानी चना ₹7,675–7,700; मिलों की चौतरफा लिवाली, बेसन त्योहारी मांग (in-house दाल 11oct RED, slide2)"
+          },
+          {
+            "news_id": "1cfaeb1d-f8b3-4f8a-b9e3-75803fcc4809",
+            "brand": "masoor",
+            "direction": "mandi",
+            "label": "मसूर मंदी → राजस्थानी ₹8,700–9,000/क्विंटल (−₹200); कनाडा का सस्ता आयात लगातार (in-house Samachar digest 11oct GREEN balance, slide3)"
+          }
+        ],
+        "fmcg": [
+          {
+            "news_id": "76b7ac3b-6943-46ef-afdf-05f3bf176783",
+            "brand": "ariel",
+            "segment": "Consumer Scheme",
+            "lr": 5.15,
+            "label": "एरियल डिटर्जेंट — 2kg पैकेट पर 1kg फ्री (कुल 3kg), MRP ₹800 (MP scheme:Consumer LR5.15, body-verified; slide4 ग्राहक ऑफर; detergent)"
+          },
+          {
+            "news_id": "2af1a505-da7d-4a83-8966-0a16c5acf091",
+            "brand": "pulse-golmal",
+            "segment": "Retailer Scheme",
+            "lr": 4.47,
+            "label": "पल्स गोलमाल इमली — बड़ा डिब्बा पर ₹50 वाला इमली पैकेट फ्री (MP scheme:Retailer LR4.47, body-verified; slide5 व्यापारी स्कीम; candy)"
+          },
+          {
+            "news_id": "a1ca4675-eb19-403a-848a-04615c6f6116",
+            "brand": "exo",
+            "segment": "Consumer Scheme",
+            "lr": 4.26,
+            "label": "एक्सो बर्तन बार ₹5 — 50g के साथ 40g एक्स्ट्रा (कुल 90g) (MP scheme:Consumer LR4.26, body-verified; slide6 ग्राहक ऑफर; dishwash)"
+          }
+        ],
+        "trending_news": [
+          {
+            "news_id": "7d59bdd3-ec11-48a7-b924-75365b7500a6",
+            "brand": "upi",
+            "direction": "news",
+            "label": "UPI नया नियम — 15 अक्टूबर से ₹2,000+ दुकान पेमेंट पर 0.4% MDR; ₹1 लाख/माह तक की छोटी दुकानें व ₹2,000 तक पेमेंट मुफ्त, ₹75k+ पर अधिकतम ₹300 (in-house Pan India Trending 11oct non-bait policy, slide7)"
+          }
+        ]
+      },
+      "also_shown": [
+        {
+          "news_id": "b4fda891-07b5-41ee-8e88-606e244b17fc",
+          "brand": "colgate",
+          "segment": "Retailer Scheme",
+          "lr": 5.91,
+          "tag": "fmcg",
+          "label": "Colgate strong 20 के 12 पर 1 फ्री — DROPPED: oral-care brand saturated within 7d (colgate/close-up/dant-kranti/dabur-red)"
+        },
+        {
+          "news_id": "7fef4375-ab39-4685-b663-e88fc54b39ca",
+          "brand": "surf-excel",
+          "segment": "fmcg_product_change",
+          "lr": 4.56,
+          "tag": "fmcg",
+          "label": "सर्फ एक्सेल रेट ₹1,010→₹1,030/katta — DROPPED: 2nd detergent (ariel LR5.15 taken) for category spread; also a rate-RISE, not an offer"
+        }
+      ]
     }
   ],
   "brand_dedup_window_days": 7
