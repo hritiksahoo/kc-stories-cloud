@@ -66,3 +66,6 @@ contact_stripe.png
 contact_badges_*.png
 *_raw.jpg
 *_raw.png
+
+# QC badge strips (regenerated every run)
+strip_*.png

@@ -72,48 +72,48 @@ def b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-11 . experiment window CLOSED -> base 3+3+1)
+# ---- EDIT THIS PER DAY: 3 commodity + 3 FMCG + 1 news ----  (2026-10-12 . experiment window CLOSED -> base 3+3+1)
 CARDS = [
- # Commodity (mandi_bhav) - 2 teji/RED (methi in-house masala, chana dal in-house daal) + 1 mandi/GREEN (masoor, canada imports down). Direction 2R+1G. 3 DISTINCT in-house news_ids (methi 332ac2e1, chana-dal fbcba991, masoor via samachar 1cfaeb1d). Category spread: spice / pulse / pulse(mandi). sona-chandi none; rujhan digest skipped. sarson-tel NOT reused (mandi 10-10 + teji 10-09 -> same commodity+direction<3d). Figures locked from in-house editorial bodies.
- dict(i=1, label="मंडी भाव", stripe=RED, headline="मेथीदाना",
-   price=f'{tri("up",RED)}₹8,200–8,300<span class="unit">/क्विंटल</span>',
-   sub=f'मेथीदाना ₹400 उछलकर ₹8,200–8,300/क्विंटल; नीमच बिना छनी ₹77–78/किलो, गुजरात बढ़िया ₹80/किलो; दिवाली तक ₹10/किलो और तेजी के आसार · <b class="delta" style="color:{RED}">₹400 तेजी</b>',
-   l1="क्यों", v1="इस सीजन मेथी उत्पादन ~3.45 से घटकर ~2.45 लाख टन; MP-राजस्थान से आवक आधी, पुराना स्टॉक खत्म",
-   l2="क्या करें", v2="मेथी, कसूरी मेथी और अचार-मसाले का जरूरी स्टॉक अभी भर लें; सर्दी की मांग पर भाव और पकड़ेगा"),
- dict(i=2, label="मंडी भाव", stripe=RED, headline="चना दाल",
-   price=f'{tri("up",RED)}₹8,750–9,200<span class="unit">/क्विंटल</span>',
-   sub=f'चना दाल ₹150 उछलकर ₹8,750–9,200/क्विंटल; राजस्थानी चना ₹100 बढ़कर ₹7,675–7,700; बेसन 35किलो ₹3,400 · <b class="delta" style="color:{RED}">₹150 तेजी</b>',
-   l1="क्यों", v1="त्योहारी मांग में सप्लाई कम और रबी बुआई की चिंता; मिलों की चौतरफा लिवाली, पीली मटर की कमी",
-   l2="क्या करें", v2="बेसन-चना दाल-छोले की त्योहारी बिक्री तेज; जरूरी स्टॉक अभी लें, हर बढ़े भाव पर मुनाफा भी लें"),
- dict(i=3, label="मंडी भाव", stripe=GREEN, headline="मसूर",
-   price=f'{tri("down",GREEN)}₹8,700–9,000<span class="unit">/क्विंटल</span>',
-   sub=f'मसूर (राजस्थानी) ₹200 नरम होकर ₹8,700–9,000/क्विंटल; कनाडा का सस्ता माल लगातार पड़ते में, अगले महीने वहां नई फसल आएगी · <b class="delta" style="color:{GREEN}">₹200 गिरावट</b>',
-   l1="क्यों", v1="कनाडा से सस्ता आयात लगातार उतर रहा है; देसी मसूर में लंबी तेजी की गुंजाइश नहीं",
-   l2="क्या करें", v2="मसूर/मलका की बड़ी खरीद कुछ दिन टालें; गिरावट पर जरूरत भर का ही माल उठाएं"),
- # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (all concrete Rs). ZERO oral-care (saturated in 7d: colgate/close-up/dant-kranti/dabur-red). Category spread: detergent / candy / dishwash.
- #   ariel LR5.15 scheme:Consumer (76b7ac3b: 2kg + 1kg free, MRP800), pulse-golmal LR4.47 scheme:Retailer (2af1a505: big box -> Rs50 imli packet free), exo LR4.26 scheme:Consumer (a1ca4675: Rs5 bar 50+40g extra).
- #   DROPPED: colget/colgate LR5.91 (oral-care saturated 7d), surf-excel 4.56 (2nd detergent -> category spread, only +0.09 over golmal; it is a rate-RISE not an offer), dettol/lux 4.69 (brand 7d + news_id 12d dup), martand/parle (news_id 12d dup). bikaji/fortune/ghadi = lower-LR backups.
- dict(i=4, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="एरियल डिटर्जेंट",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">2kg पर 1kg फ्री</span>',
-   sub=f'₹800 MRP वाले 2 किलो एरियल डिटर्जेंट पैकेट के साथ 1 किलो पाउडर बिल्कुल फ्री — ग्राहक को कुल 3 किलो, 50% ज्यादा · <b class="delta" style="color:{SCHEME_BLUE}">1kg एक्स्ट्रा फ्री</b>',
-   l1="ऑफर", v1="₹800 MRP एरियल 2 किलो पैकेट — साथ में 1 किलो पाउडर बिल्कुल फ्री (कुल 3 किलो)",
-   l2="ग्राहक को", v2="एक पैकेट में 50% ज्यादा पाउडर; त्योहारी धुलाई-सफाई की तेज मांग में ग्राहक को बड़ी बचत"),
- dict(i=5, eyebrow="FMCG", label="व्यापारी स्कीम", stripe=SCHEME_GREEN, headline="पल्स गोलमाल इमली",
-   price=f'<span class="offer" style="background:{SCHEME_GREEN}">₹50 पैकेट फ्री</span>',
-   sub=f'पल्स गोलमाल इमली कैंडी का बड़ा डिब्बा खरीदने पर ₹50 वाला गोलमाल इमली पैकेट बिल्कुल फ्री; पूरा ₹50 का माल मुफ्त · <b class="delta" style="color:{SCHEME_GREEN}">₹50 का माल फ्री</b>',
-   l1="स्कीम", v1="पल्स गोलमाल इमली का बड़ा जार/डिब्बा लेने पर ₹50 का इमली पैकेट बिल्कुल फ्री",
-   l2="फायदा", v2="खट्टी-मीठी इमली कैंडी बच्चों में तेज बिकती है; ₹50 फ्री माल सीधा मार्जिन में जुड़ता है"),
- dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="एक्सो बर्तन बार",
-   price=f'<span class="offer" style="background:{SCHEME_BLUE}">50+40g एक्स्ट्रा</span>',
-   sub=f'₹5 MRP वाले एक्सो बर्तन बार में अब 50 ग्राम के साथ 40 ग्राम एक्स्ट्रा — उतने ही दाम में कुल 90 ग्राम · <b class="delta" style="color:{SCHEME_BLUE}">40g एक्स्ट्रा फ्री</b>',
-   l1="ऑफर", v1="₹5 एक्सो बर्तन बार — 50 ग्राम के साथ 40 ग्राम एक्स्ट्रा, कुल 90 ग्राम उतने ही ₹5 में",
-   l2="ग्राहक को", v2="उतने ही ₹5 में ~80% ज्यादा बार; रोज़ बिकने वाला बर्तन बार, ग्राहक को सीधा फायदा"),
- # News (trending_news) - in-house 11oct Pan India Trending News 1 (7d59bdd3): 15 Oct se UPI MDR naya niyam - 0.4% charge on >Rs2000 shop payments, small shops (<=Rs1lakh/month) + all <=Rs2000 payments fully free, charge never from customer, Rs75000+ capped at Rs300. Fresh, concrete, high kirana-impact, non-bait policy. FADA rural-sales (1751) + KVP scheme (1752) are backups; LPG/scam-bait avoided.
- dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="UPI का नया नियम",
-   price='<span class="news">15 अक्टूबर से नया MDR शुल्क</span>',
-   sub='अब ₹2,000 से ऊपर के UPI दुकान पेमेंट पर 0.4% शुल्क (MDR); ₹2,000 तक के पेमेंट और ₹1 लाख/माह वाली छोटी दुकानें मुफ्त · <b class="delta">छोटी दुकानें बाहर</b>',
-   l1="क्यों ज़रूरी", v1="₹75,000+ पेमेंट पर अधिकतम ₹300 शुल्क; यह शुल्क ग्राहक से कभी नहीं लिया जाएगा",
-   l2="क्या करें", v2="घबराकर QR न हटाएं; ₹1 लाख/माह तक वसूली है तो आप पर शून्य शुल्क रहेगा"),
+ # Commodity (mandi_bhav) - 2 teji/RED (kabuli chana in-house daal, kalimirch in-house masala) + 1 mandi/GREEN (rice-bran-oil from in-house oil post). Direction 2R+1G. 3 DISTINCT in-house news_ids (kabuli-chana 41fa84cc, kalimirch 159e1847, rice-bran-oil 6c445b4d). Category spread: pulse / spice / edible-oil. sona-chandi none; rujhan digest skipped. masoor NOT reused (mandi pick 10-11 -> same commodity+direction<3d). Figures locked from in-house editorial bodies (12 Oct).
+ dict(i=1, label="मंडी भाव", stripe=RED, headline="काबुली चना",
+   price=f'{tri("up",RED)}₹8,500–8,900<span class="unit">/क्विंटल</span>',
+   sub=f'काबुली चना ₹8,500 से ₹8,900/क्विंटल की ओर, ~₹400 तेजी के आसार; तुवर ₹9,800→10,100, उड़द ₹10,550 पर मजबूत · <b class="delta" style="color:{RED}">₹400 तेजी</b>',
+   l1="क्यों", v1="विदेश में काबुली चने के ऊंचे भाव से आयात महंगा; मंडियों में स्टॉक कम और त्योहारी ग्राहकी निकल रही",
+   l2="क्या करें", v2="काबुली चना और छोले का माल त्योहारी मांग से पहले भर लें; मसूर में जल्दबाजी की जरूरत नहीं"),
+ dict(i=2, label="मंडी भाव", stripe=RED, headline="कालीमिर्च",
+   price=f'{tri("up",RED)}₹770–780<span class="unit">/किलो</span>',
+   sub=f'मरकरा कालीमिर्च ₹15 बढ़कर ₹770–780/किलो; लौंग भी ₹10 चढ़कर ₹930–1,010/किलो, हल्दी-सौंफ-अजवाइन भी तेज · <b class="delta" style="color:{RED}">₹15 तेजी</b>',
+   l1="क्यों", v1="वियतनाम, ब्राजील और इंडोनेशिया में भाव चढ़े, आयात महंगा; आगे भी मजबूती के आसार",
+   l2="क्या करें", v2="त्योहारी सीजन में मसालों की खपत सबसे ज्यादा; कालीमिर्च-लौंग का माल अभी भर लें"),
+ dict(i=3, label="मंडी भाव", stripe=GREEN, headline="राइस ब्रान ऑयल",
+   price=f'{tri("down",GREEN)}₹12,800<span class="unit">/क्विंटल</span>',
+   sub=f'पूरे तेल बाजार में अकेला राइस ब्रान ऑयल ₹150 फिसलकर ₹12,800/क्विंटल; सरसों, सोया और तिल तेल तेज रहे · <b class="delta" style="color:{GREEN}">₹150 गिरावट</b>',
+   l1="क्यों", v1="बाकी खाद्य तेल तेज पर राइस ब्रान की मांग नरम; कांदला में क्रूड पाम ₹12,100 पर सुस्त",
+   l2="क्या करें", v2="ग्राहक को किफायती विकल्प के तौर पर राइस ब्रान बेच सकते हैं; बड़ी खरीद कुछ दिन टालें"),
+ # FMCG (fmcg) - TOP 3 by LR desc across segments after ledger dedup (news_id 12d + brand 7d) + body-verify (all concrete Rs). NO new_product_launch rows in today's report. ZERO oral-care. Category spread: home-care(air) / personal-care(skin) / soap.
+ #   godrej-aer LR7.90 product_change (3bb34ed9: MRP 65->70, +Rs5, 10g), glow-lovely LR6.26 product_change/weight (a6c9abf2: Rs10, 15g->14g shrink), patanjali-haldi-chandan LR4.49 Consumer Scheme (f1622119: Rs99 me 4+1 free).
+ #   DROPPED: patanjali-dant-kanti LR5.72 (brand 7d dup 10-07), bounce LR4.59 (garbled/vague body, no clean offer), coca-cola/dettol/colgate/colget/ariel/surf-excel (brand 7d and/or news_id 12d dup). cintu/gillette/anmol = lower-LR backups.
+ dict(i=4, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="गोदरेज एयर पॉकेट",
+   price='₹65<span class="arrow">→</span>₹70',
+   sub=f'गोदरेज एयर पॉकेट (10 ग्राम) की नई MRP ₹70 — पहले ₹65 थी, कंपनी ने ₹5 रेट बढ़ाया; पैक वही 10 ग्राम · <b class="delta">₹5 बढ़ोतरी</b>',
+   l1="बदलाव", v1="MRP ₹65 से बढ़कर ₹70 (₹5 ज्यादा); बाथरूम एयर-फ्रेशनर पॉकेट, पैक वही 10 ग्राम",
+   l2="फायदा", v2="पुराने ₹65 वाले स्टॉक पर पुरानी MRP बेच लें; नया माल ₹70 पर रखें, पुराने-नए पैक अलग रखें"),
+ dict(i=5, eyebrow="FMCG", label="प्रोडक्ट बदलाव", stripe=BLACK, headline="ग्लो लवली क्रीम",
+   price='15g<span class="arrow">→</span>14g',
+   sub=f'₹10 वाली ग्लो लवली सीरम-इन-क्रीम का वजन 15 ग्राम से घटाकर 14 ग्राम; पैकिंग भी छोटी हुई, दाम वही ₹10 · <b class="delta">1g कम</b>',
+   l1="बदलाव", v1="दाम वही ₹10, पर वजन 15 ग्राम से घटकर 14 ग्राम; पैक भी छोटा कर दिया गया",
+   l2="फायदा", v2="पुराना 15 ग्राम वाला स्टॉक पहले निकालें; ग्राहक को दाम वही ₹10 बताएं"),
+ dict(i=6, eyebrow="FMCG", label="ग्राहक ऑफर", stripe=SCHEME_BLUE, headline="पतंजलि हल्दी-चंदन साबुन",
+   price=f'<span class="offer" style="background:{SCHEME_BLUE}">4 + 1 फ्री</span>',
+   sub=f'₹99 में पतंजलि हल्दी-चंदन कांति साबुन के 4 खरीदने पर 1 बिल्कुल फ्री — ग्राहक को कुल 5 साबुन · <b class="delta" style="color:{SCHEME_BLUE}">1 साबुन फ्री</b>',
+   l1="ऑफर", v1="₹99 में हल्दी-चंदन कांति साबुन 4 खरीदें, 1 बिल्कुल फ्री (कुल 5 साबुन)",
+   l2="ग्राहक को", v2="5 साबुन ₹99 में; त्योहारी नहाने-धोने की मांग में ग्राहक को सीधी बचत"),
+ # News (trending_news) - in-house 12oct Pan India Trending News 1 (f867a00d): FMCG price hikes this festive season - Britannia biscuits +1.5-2% (Rs5/Rs10 packs), palm oil + packaging costlier, rupee weak; HUL/Godrej/Dabur/Tata reviewing. Fresh, concrete, high kirana-impact, non-bait. FSSAI-rules (eac24983) is backup; scam-bait avoided.
+ dict(i=7, label="ट्रेंडिंग न्यूज़", stripe=BLACK, headline="साबुन-बिस्किट महंगे",
+   price='<span class="news">त्योहारी सीजन में दाम बढ़ेंगे</span>',
+   sub='पाम तेल व पैकिंग महंगी, रुपया कमजोर; Britannia बिस्किट 1.5–2% महंगे, ₹5–₹10 पैक पर असर · <b class="delta">पुराना स्टॉक फायदे में</b>',
+   l1="क्यों ज़रूरी", v1="पाम तेल व पैकिंग लागत बढ़ी, रुपया कमजोर; बड़ी कंपनियां भी दाम समीक्षा में",
+   l2="क्या करें", v2="पुराने MRP वाला स्टॉक अभी बेच लें; नए-पुराने पैक अलग रखें"),
 ]
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 html,body{{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;font-family:'Nirmala UI','Segoe UI',sans-serif;}}
